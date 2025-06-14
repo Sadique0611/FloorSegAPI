@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+torch
+ezdxf
+matplotlib
+opencv-python
+numpy
+pillow
+pytesseract

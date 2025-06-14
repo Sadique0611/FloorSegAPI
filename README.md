@@ -1,5 +1,33 @@
-# FloorSegAPI
-A FastAPI-based application for segmenting 2D floor plans into functional spaces (rooms, kitchens, etc.) using a U-Net model built with PyTorch. Developed during my internship at LeanPort Digital Technologies GmbH, this project showcases AI-driven image segmentation and API development.
+# Floorplan Segmentation API
 
-Length: 135 characters (GitHub’s limit is ~512, but shorter is better for readability).
-Key Elements: Mentions the project’s goal (floor plan segmentation), technologies (FastAPI, PyTorch, U-Net), context (internship), and skills (AI, API development).
+This project parses DWG/DXF architectural floorplans and uses deep learning to segment rooms and identify labels.
+
+## Features
+- Convert .dxf to .png
+- Segment rooms with pretrained model
+- Extract room names using OCR
+- FastAPI-based REST API
+
+## Usage
+1. Run `uvicorn main:app --reload`
+2. Visit `http://localhost:8000/docs`
+3. Upload a `.dxf` floorplan to `/segment/`
+
+## Folder Structure
+```
+floorplan-segmentation-api/
+├── main.py
+├── model/
+│   └── unet_model.pth
+├── dxf_parser/
+│   └── parse_dxf.py
+├── segmentation/
+│   └── segmentor.py
+├── utils/
+│   └── ocr.py
+├── test_data/
+│   ├── example.dxf
+│   └── example.png
+├── requirements.txt
+└── README.md
+```
